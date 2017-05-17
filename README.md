@@ -1,4 +1,4 @@
-# docker-rpi-arm-ffmpeg-h264-omx-alsa
+# docker-rpi-arm-ffmpeg-h264-alsa
 Docker repository:
 https://hub.docker.com/r/sorenvalentin/rpi-arm-ffmpeg-h264-alsa-hardwareaccellerated/
 
@@ -9,7 +9,9 @@ Supports video and audio.
 Compiled using Praveen Potluru's guide, credits to him
 http://praveen.life/2016/06/26/compile-ffmpeg-for-raspberry-pi-3/
 
-Includes ffmpeg compiled with h264, libfdk-aac, alsa and hardware accelerated h264 (aka h264_omx)
+Includes ffmpeg compiled with h264, libfdk-aac and alsa.
+
+!!! h264_omx currently not working !!!
 
 FFMPEG is configured with: ./configure --prefix=/home/pi/ffmpeg/dependencies/output
 --enable-gpl \
