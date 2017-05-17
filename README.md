@@ -1,4 +1,4 @@
-# docker-rpi-arm-ffmpeg-h264-hardwareaccellerated-alsalatest-ffmpeg
+# docker-rpi-arm-ffmpeg-h264-omx-alsa
 Docker repository:
 https://hub.docker.com/r/sorenvalentin/rpi-arm-ffmpeg-h264-alsa-hardwareaccellerated/
 
