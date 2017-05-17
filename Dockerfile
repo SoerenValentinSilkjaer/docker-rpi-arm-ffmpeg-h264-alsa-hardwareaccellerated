@@ -6,7 +6,6 @@ RUN apt-get update && apt-get install libasound2
 
 COPY bin/. /bin/
 COPY lib/. /lib/
-COPY lib/opt/vc/. /opt/vc/
 
 RUN chmod +x /bin/aserver / \
 && chmod +x /bin/ffmpeg / \
