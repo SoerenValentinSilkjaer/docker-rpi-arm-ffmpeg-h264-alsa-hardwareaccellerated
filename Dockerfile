@@ -1,11 +1,12 @@
 FROM resin/rpi-raspbian:latest
 
-MAINTAINER SoerenValentinSilkjaer <svseboks@gmail.com>
+MAINTAINER SorenValentin <svseboks@gmail.com>
 
-RUN apt-get update && apt-get install libasound2 && apt-get install libav-tools
+RUN apt-get update && apt-get install libasound2
 
 COPY bin/. /bin/
 COPY lib/. /lib/
+COPY lib/opt/. /opt/vc/lib/
 
 RUN chmod +x /bin/aserver / \
 && chmod +x /bin/ffmpeg / \
