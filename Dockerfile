@@ -2,7 +2,7 @@ FROM resin/rpi-raspbian:latest
 
 MAINTAINER SoerenValentinSilkjaer <svseboks@gmail.com>
 
-RUN apt-get update && apt-get install libasound2
+RUN apt-get update && apt-get install libasound2 && apt-get install libav-tools
 
 COPY bin/. /bin/
 COPY lib/. /lib/
