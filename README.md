@@ -25,4 +25,4 @@ FFMPEG is configured with: ./configure --prefix=/home/pi/ffmpeg/dependencies/out
 
 How to:
 See docker repository:
-https://hub.docker.com/r/sorenvalentin/rpi-arm-ffmpeg-h264-alsa-hardwareaccellerated/
+https://hub.docker.com/r/sorenvalentin/rpi-arm-ffmpeg-h264-alsa/
