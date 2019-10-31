@@ -32,7 +32,7 @@ services:
     networks:
       extnetwork:
         ipv4_address: 172.10.0.3
-    command: 'ffmpeg -f v4l2 -i /dev/video0  -s 640x480 -r 50  -vcodec libxvid -an http://172.10.0.2:8090/feed1.ffm'
+    command: 'ffmpeg -f v4l2 -i /dev/video0  -s 640x480 -r 50  -vcodec libx264 -an http://172.10.0.2:8090/feed1.ffm'
 
 networks:
   extnetwork:
