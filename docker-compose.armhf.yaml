@@ -14,7 +14,6 @@ services:
       extnetwork:
         ipv4_address: 172.10.0.2
     ports:
-      - "8090:8090"
       - "8554:8554"
     command: /home/start-ffserver.sh
   rpi-ffmpeg-armhf:
@@ -22,6 +21,8 @@ services:
        - rpi-ffserver-armhf
     image: rekter/ffmpeg-arm
     container_name: rpi-ffmpeg-rtsp
+    volumes:
+      - ./data:/home
     devices:
       - dev/video0:dev/video0
     read_only: false 
@@ -31,7 +32,7 @@ services:
     networks:
       extnetwork:
         ipv4_address: 172.10.0.3
-    command: 'ffmpeg -f v4l2 -i /dev/video0  -s 640x480 -r 24 -vcodec libx264 -an http://172.10.0.2:8090/feed1.ffm'
+    command: 'ffmpeg -f v4l2 -i /dev/video0  -s 640x480 -r 50  -vcodec libxvid -an http://172.10.0.2:8090/feed1.ffm'
 
 networks:
   extnetwork:
