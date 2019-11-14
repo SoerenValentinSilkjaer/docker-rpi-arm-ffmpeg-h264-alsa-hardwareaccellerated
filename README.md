@@ -1,28 +1,25 @@
-# docker-rpi-arm-ffmpeg-h264-alsa
-Docker repository:
-https://hub.docker.com/r/sorenvalentin/rpi-arm-ffmpeg-h264-alsa-hardwareaccellerated/
+# Docker for rpi 3b webcam rtsp stream
 
-FFMPEG for raspberry pi and ARM cpus. Build on Raspbian.
+  use ffmpeg && ffserver
 
-Supports video and audio.
+# How to turn rpi 3b to rtsp server
+   
+   1. Need a webcam(Logitech C270)
+   2. Install docker-ce
+   3. Install docker-compose
+   4. Install git
 
-Compiled using Praveen Potluru's guide, credits to him
-http://praveen.life/2016/06/26/compile-ffmpeg-for-raspberry-pi-3/
-
-Includes ffmpeg compiled with h264, libfdk-aac and alsa.
-
-!!! h264_omx currently not working !!!
-
-FFMPEG is configured with: ./configure --prefix=/home/pi/ffmpeg/dependencies/output
---enable-gpl \
---enable-libx264 \
---enable-nonfree \
---enable-libfdk_aac \
---enable-omx \
---enable-omx-rpi \
---extra-cflags="-I/home/pi/ffmpeg/dependencies/output/include" \
---extra-ldflags="-L/home/pi/ffmpeg/dependencies/output/lib" --extra-libs="-lx264 -lpthread -lm -ldl"
-
-How to:
-See docker repository:
-https://hub.docker.com/r/sorenvalentin/rpi-arm-ffmpeg-h264-alsa/
+# Just do it
+  ```
+   $cd /home/pi
+   $git clone https://github.com/sndnvaps/rpi-ffmpeg-rtsp-server.git
+   $cd rpi-ffmpeg-rtsp-server
+   $docker-compose -f docker-compose.armhf.yaml up -d
+  ```
+# Receive rpi 3b rtsp stream from the network and save with ffmpeg
+```
+  $ffmpeg -y -i rtsp://192.168.13.173:8554/live1.mpeg -vcodec copy -f mp4 2019.10.22-11.45.mp4
+  
+  192.168.13.173 is the rpi ip address
+  2019.10.22-11.45.mp4 is what you save to the disk.
+```
